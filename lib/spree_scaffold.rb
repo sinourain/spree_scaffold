@@ -1,6 +1,6 @@
 require 'deface'
 require 'spree_core'
-require 'spree_scaffold_hooks'
+#require 'spree_scaffold_hooks'
 
 module SpreeScaffold
   class Engine < Rails::Engine
