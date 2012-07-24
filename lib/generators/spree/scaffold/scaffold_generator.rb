@@ -49,7 +49,7 @@ module Spree
 
       # Added back since using deface
       def create_hooks
-        template 'hooks.rb', "config/initializers/spree_scaffold_#{model_path.pluralize}_hooks.rb"
+        template 'hooks.rb', "app/overrides/spree_scaffold_#{model_path.pluralize}_hooks.rb"
       end
 
       private
