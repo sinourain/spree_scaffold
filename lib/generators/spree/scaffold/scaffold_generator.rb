@@ -36,11 +36,12 @@ module Spree
           template "views/#{view}.html.erb", "app/views/spree/admin/#{model_path.pluralize}/#{view}.html.erb"
         end
         template "views/_form.html.erb", "app/views/spree/admin/#{model_path.pluralize}/_form.html.erb"
+        template "views/show.html.erb", "app/views/spree/#{model_path.pluralize}/show.html.erb"
       end
   
       def create_migration
         stamp =  Time.now.utc.strftime("%Y%m%d%H%M%S")
-        template 'migration.rb', "db/migrate/#{stamp}_create_#{model_path.pluralize}.rb"
+        template 'migration.rb', "db/migrate/#{stamp}_create_spree#{model_path.pluralize}.rb"
       end
   
       def create_locale
@@ -63,7 +64,7 @@ module Spree
       end
   
       def table_name
-        scaffold_name.downcase.underscore.pluralize
+         .downcase.underscore.pluralize
       end
   
       def display_name
