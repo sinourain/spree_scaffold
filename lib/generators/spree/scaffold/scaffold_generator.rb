@@ -32,11 +32,10 @@ module Spree
       end
   
       def create_views
-        ['index','new','edit'].each do |view|
+        ['index','new','edit', 'show'].each do |view|
           template "views/#{view}.html.erb", "app/views/spree/admin/#{model_path.pluralize}/#{view}.html.erb"
         end
         template "views/_form.html.erb", "app/views/spree/admin/#{model_path.pluralize}/_form.html.erb"
-        template "views/show.html.erb", "app/views/spree/#{model_path.pluralize}/show.html.erb"
       end
   
       def create_migration
