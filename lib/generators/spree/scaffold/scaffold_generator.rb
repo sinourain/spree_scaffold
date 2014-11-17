@@ -64,7 +64,7 @@ module Spree
       end
   
       def table_name
-         .downcase.underscore.pluralize
+        scaffold_name.downcase.underscore.pluralize
       end
   
       def display_name
