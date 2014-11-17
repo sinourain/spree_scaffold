@@ -24,18 +24,18 @@ module Spree
       end
       
       def create_model
-        template 'model.rb', "app/models/#{model_path}.rb"
+        template 'model.rb', "app/models/spree/#{model_path}.rb"
       end
   
       def create_controller
-        template 'controller.rb', "app/controllers/admin/#{model_path.pluralize}_controller.rb"
+        template 'controller.rb', "app/controllers/spree/admin/#{model_path.pluralize}_controller.rb"
       end
   
       def create_views
         ['index','new','edit'].each do |view|
-          template "views/#{view}.html.erb", "app/views/admin/#{model_path.pluralize}/#{view}.html.erb"
+          template "views/#{view}.html.erb", "app/views/spree/admin/#{model_path.pluralize}/#{view}.html.erb"
         end
-        template "views/_form.html.erb", "app/views/admin/#{model_path.pluralize}/_form.html.erb"
+        template "views/_form.html.erb", "app/views/spree/admin/#{model_path.pluralize}/_form.html.erb"
       end
   
       def create_migration
