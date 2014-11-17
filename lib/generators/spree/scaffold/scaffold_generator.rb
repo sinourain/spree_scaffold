@@ -40,7 +40,7 @@ module Spree
   
       def create_migration
         stamp =  Time.now.utc.strftime("%Y%m%d%H%M%S")
-        template 'migration.rb', "db/migrate/#{stamp}_create_spree#{model_path.pluralize}.rb"
+        template 'migration.rb', "db/migrate/#{stamp}_create_spree_#{model_path.pluralize}.rb"
       end
   
       def create_locale
